@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        let savedTheme=localStorage.getItem('theme')||'dark';
+        document.documentElement.setAttribute('data-bs-theme',savedTheme);
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        
+        :root[data-bs-theme="dark"]{
+            --bs-body-bg:#0f1115;
+            --surface-color:#1c1f26;
+            --border-color:#2b303b;
+            --text-color:#f8f9fa;
+        }
+        :root[data-bs-theme="light"]{
+            --bs-body-bg:#f4f7f6;
+            --surface-color:#ffffff;
+            --border-color:#e2e8f0;
+            --text-color:#2b2f3a;
+        }
+        body{
+            background-color:var(--bs-body-bg); 
+            color:var(--text-color);
+            transition:background-color 0.3s ease, color 0.3s ease;
+            font-family:'Poppins', sans-serif;
+        }
+        .navbar{
+            background-color:var(--surface-color) !important; 
+            border-bottom:1px solid var(--border-color); 
+            box-shadow:0 4px 20px rgba(0,0,0,0.05);
+        }
+        .nav-link{
+            color:var(--text-color) !important;
+            font-weight:500;
+        }
+        .card{
+            background-color:var(--surface-color); 
+            border:1px solid var(--border-color); 
+            border-radius:12px; 
+            box-shadow:0 8px 24px rgba(0,0,0,0.04); 
+        }
+        /* REGLAS DE TABLA CORREGIDAS */
+        .table{
+            border-color:var(--border-color);
+            vertical-align: middle;
+            margin-bottom:0;
+        }
+        .table > :not(caption) > * > * {
+            background-color:var(--surface-color);
+            color:var(--text-color);
+            border-bottom-color:var(--border-color);
+            transition:background-color 0.3s ease, color 0.3s ease;
+        }
+        /* Forzar la cabecera independientemente de la clase que tenga el HTML */
+        .table thead th {
+            background-color:var(--border-color) !important;
+            color:var(--text-color) !important;
+            font-weight:600;
+            border-bottom:2px solid var(--border-color);
+        }
+        .table-hover tbody tr:hover > * {
+            background-color:rgba(13,110,253,0.06); 
+        }
+        /* RESTO DE ESTILOS */
+        .btn{
+            border-radius:8px; 
+            font-weight:600; 
+            transition:all 0.2s ease;
+        }
+        .btn:hover{
+            transform:translateY(-2px); 
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+        }
+        .form-control, .form-select{
+            background-color:var(--bs-body-bg);
+            border:1px solid var(--border-color);
+            border-radius:8px;
+            color:var(--text-color);
+        }
+        .form-control:focus, .form-select:focus{
+            box-shadow:none;
+            border-color:#0d6efd;
+            background-color:var(--bs-body-bg);
+            color:var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg mb-4">
+        <div class="container">
+            <a class="navbar-brand text-primary fw-bold" href="index.php">Gestión de Proyectos</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.php">CRUD Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consulta1.php">Proyectos por Cliente</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consulta2.php">Listado de Tareas</a></li>
+                    <li class="nav-item ms-3">
+                        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm border-0">
+                            <i id="theme-icon" class="bi bi-moon-fill fs-5"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
