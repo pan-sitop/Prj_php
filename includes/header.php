@@ -45,7 +45,6 @@
             border-radius:12px; 
             box-shadow:0 8px 24px rgba(0,0,0,0.04); 
         }
-        /* REGLAS DE TABLA CORREGIDAS */
         .table{
             border-color:var(--border-color);
             vertical-align: middle;
@@ -57,7 +56,6 @@
             border-bottom-color:var(--border-color);
             transition:background-color 0.3s ease, color 0.3s ease;
         }
-        /* Forzar la cabecera independientemente de la clase que tenga el HTML */
         .table thead th {
             background-color:var(--border-color) !important;
             color:var(--text-color) !important;
@@ -67,7 +65,6 @@
         .table-hover tbody tr:hover > * {
             background-color:rgba(13,110,253,0.06); 
         }
-        /* RESTO DE ESTILOS */
         .btn{
             border-radius:8px; 
             font-weight:600; 
@@ -97,9 +94,19 @@
             <a class="navbar-brand text-primary fw-bold" href="index.php">Gestión de Proyectos</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.php">CRUD Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="consulta1.php">Proyectos por Cliente</a></li>
-                    <li class="nav-item"><a class="nav-link" href="consulta2.php">Listado de Tareas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Registrar
+                        </a>
+                        <ul class="dropdown-menu shadow border-0">
+                            <li><a class="dropdown-item" href="crear.php">Nuevo Proyecto</a></li>
+                            <li><a class="dropdown-item" href="crear_cliente.php">Nuevo Cliente</a></li>
+                            <li><a class="dropdown-item" href="crear_tarea.php">Nueva Tarea</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consulta1.php">Consulta Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consulta2.php">Consulta Tareas</a></li>
                     <li class="nav-item ms-3">
                         <button id="theme-toggle" class="btn btn-outline-secondary btn-sm border-0">
                             <i id="theme-icon" class="bi bi-moon-fill fs-5"></i>
