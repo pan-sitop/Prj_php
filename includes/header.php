@@ -98,10 +98,10 @@
                     <li class="nav-item"><a class="nav-link" href="../clientes/index.php">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="../tareas/index.php">Tareas</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reportes</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Consultas</a>
                         <ul class="dropdown-menu shadow border-0">
-                            <li><a class="dropdown-item" href="../reportes/consulta1.php">Reporte: Proyectos/Cliente</a></li>
-                            <li><a class="dropdown-item" href="../reportes/consulta2.php">Reporte: Detalle Tareas</a></li>
+                            <li><a class="dropdown-item" href="../reportes/consulta1.php">Consulta: Proyectos/Cliente</a></li>
+                            <li><a class="dropdown-item" href="../reportes/consulta2.php">Consulta: Detalle Tareas</a></li>
                         </ul>
                     </li>
                     <li class="nav-item ms-3">
