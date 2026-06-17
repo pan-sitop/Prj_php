@@ -1,6 +1,6 @@
 <?php
-    include 'config/conexion.php';
-    include 'includes/header.php';
+    include '../config/conexion.php';
+    include '../includes/header.php';
 
     $sql="SELECT c.nombre AS cliente, COUNT(p.id) AS total_proyectos FROM Clientes c LEFT JOIN Proyectos p ON c.id=p.cliente_id GROUP BY c.id";
     $result=$conn->query($sql);
@@ -16,4 +16,4 @@
         <?php } ?>
         </tbody>
     </table>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

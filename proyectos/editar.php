@@ -1,5 +1,5 @@
 <?php
-    include 'config/conexion.php';
+    include '../config/conexion.php';
     $id=$_GET['id'];
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $nombre=$_POST['nombre'];
@@ -10,7 +10,7 @@
         $stmt=$conn->prepare($sql);
         $stmt->bind_param("ssiii",$nombre,$descripcion,$cliente_id,$estado_id,$id);
         $stmt->execute();
-        header("Location: index.php");
+        header("Location: ../proyectos/index.php");
         exit();
     }
     $sqlProy="SELECT * FROM Proyectos WHERE id=?";
@@ -21,10 +21,10 @@
 
     $clientes=$conn->query("SELECT * FROM Clientes");
     $estados=$conn->query("SELECT * FROM EstadosProyecto");
-    include 'includes/header.php';
+    include '../includes/header.php';
     ?>
     <h2 class="text-warning mb-3">Editar Proyecto</h2>
-    <form action="editar.php?id=<?php echo $id; ?>" method="POST" class="w-50 card p-4">
+    <form action="../proyectos/editar.php?id=<?php echo $id; ?>" method="POST" class="w-50 card p-4">
         <div class="mb-3">
             <label class="form-label">Nombre del Proyecto:</label>
             <input type="text" name="nombre" value="<?php echo $proyecto['nombre']; ?>" class="form-control" required>
@@ -51,4 +51,4 @@
         </div>
         <button type="submit" class="btn btn-warning">Actualizar</button>
     </form>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

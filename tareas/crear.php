@@ -1,5 +1,5 @@
 <?php
-include 'config/conexion.php';
+include '../config/conexion.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $proyecto_id=$_POST['proyecto_id'];
     $nombre=$_POST['nombre'];
@@ -10,15 +10,15 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $stmt=$conn->prepare($sql);
     $stmt->bind_param("isssi",$proyecto_id,$nombre,$asignado_a,$fecha_entrega,$estado_id);
     $stmt->execute();
-    header("Location: consulta2.php");
+    header("Location: index.php");
     exit();
 }
 $proyectos=$conn->query("SELECT * FROM Proyectos");
 $estados=$conn->query("SELECT * FROM EstadosProyecto");
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 <h2 class="text-success mb-3">Nueva Tarea</h2>
-<form action="crear_tarea.php" method="POST" class="w-50 card p-4">
+<form action="crear.php" method="POST" class="w-50 card p-4">
     <div class="mb-3">
         <label class="form-label">Asignar al Proyecto:</label>
         <select name="proyecto_id" class="form-control" required>
@@ -49,4 +49,4 @@ include 'includes/header.php';
     </div>
     <button type="submit" class="btn btn-primary">Registrar Tarea</button>
 </form>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
-    include 'config/conexion.php';
-    include 'includes/header.php';
+    include '../config/conexion.php';
+    include '../includes/header.php';
 
     $sql="SELECT p.nombre AS proyecto, t.nombre AS tarea, t.asignado_a, t.fecha_entrega, e.nombre AS estado_tarea FROM Tareas t JOIN Proyectos p ON t.proyecto_id=p.id JOIN EstadosProyecto e ON t.estado_id=e.id";
     $result=$conn->query($sql);
@@ -22,4 +22,4 @@
         <?php } ?>
         </tbody>
     </table>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

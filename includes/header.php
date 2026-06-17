@@ -91,26 +91,21 @@
 <body>
     <nav class="navbar navbar-expand-lg mb-4">
         <div class="container">
-            <a class="navbar-brand text-primary fw-bold" href="index.php">Gestión de Proyectos</a>
+            <a class="navbar-brand text-primary fw-bold" href="../proyectos/index.php">Gestión Proyectos</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../proyectos/index.php">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../clientes/index.php">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tareas/index.php">Tareas</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Registrar
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reportes</a>
                         <ul class="dropdown-menu shadow border-0">
-                            <li><a class="dropdown-item" href="crear.php">Nuevo Proyecto</a></li>
-                            <li><a class="dropdown-item" href="crear_cliente.php">Nuevo Cliente</a></li>
-                            <li><a class="dropdown-item" href="crear_tarea.php">Nueva Tarea</a></li>
+                            <li><a class="dropdown-item" href="../reportes/consulta1.php">Reporte: Proyectos/Cliente</a></li>
+                            <li><a class="dropdown-item" href="../reportes/consulta2.php">Reporte: Detalle Tareas</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="index.php">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="consulta1.php">Consulta Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="consulta2.php">Consulta Tareas</a></li>
                     <li class="nav-item ms-3">
-                        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm border-0">
-                            <i id="theme-icon" class="bi bi-moon-fill fs-5"></i>
-                        </button>
+                        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm border-0"><i id="theme-icon" class="bi bi-moon-fill fs-5"></i></button>
                     </li>
                 </ul>
             </div>

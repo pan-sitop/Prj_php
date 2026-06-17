@@ -1,5 +1,5 @@
 <?php
-include 'config/conexion.php';
+include '../config/conexion.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $nombre=$_POST['nombre'];
     $contacto=$_POST['contacto'];
@@ -10,10 +10,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     header("Location: index.php");
     exit();
 }
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 <h2 class="text-success mb-3">Nuevo Cliente</h2>
-<form action="crear_cliente.php" method="POST" class="w-50 card p-4">
+<form action="crear.php" method="POST" class="w-50 card p-4">
     <div class="mb-3">
         <label class="form-label">Nombre de la Empresa o Cliente:</label>
         <input type="text" name="nombre" class="form-control" required>
@@ -24,4 +24,4 @@ include 'includes/header.php';
     </div>
     <button type="submit" class="btn btn-primary">Registrar Cliente</button>
 </form>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
